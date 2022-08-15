@@ -1,0 +1,27 @@
+{
+
+	"name": "Auto Student Center Login",
+	"version": "0.1",
+	"description": "Automatic Student Center Login: This script will automatically login to the Student Center website and automatically fill out the form.",
+	"content_scripts": [
+	{
+		"matches": ["https://identification.umontreal.ca/cas*"],
+		"js": ["jquery-1.11.1.min.js", "my-script.js"]
+		}],
+     "browser_action" : {
+	"default_popup": "options.html"
+	},
+	"permissions":[
+		"storage","tabs",
+        "http://*/*",
+        "https://*/*"
+		
+		],
+	"background":{
+		"scripts": ["background.js"]
+		},
+		"icons" : {
+		"128" : "logo.png"
+		},
+	"manifest_version": 2
+}
