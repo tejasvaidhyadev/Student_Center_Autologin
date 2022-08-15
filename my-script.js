@@ -4,7 +4,7 @@ var password = "";
 chrome.storage.local.get(null, function(result){
 	if (result.username == null)
 	{
-		alert("wrong credentials or No Credentials are set; Correct your details in the extension and open erp again in new tab/window");
+		alert("Wrong credentials or No credentials are set; Correct your details in the extension and open student center again in new tab/window");
 	    throw Error("wrong credentials");
 	}
 	username = result.username;
@@ -19,3 +19,4 @@ chrome.storage.local.get(null, function(result){
 	console.log(username);
 });
 });
+
