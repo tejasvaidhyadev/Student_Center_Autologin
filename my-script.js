@@ -18,6 +18,15 @@ chrome.storage.local.get(null, function(result){
 		clearInterval(myVar);
 	}, 500);
 	console.log(username);
+	stopper();
+	sessionStorage.setItem("stop", "true");
 });
 });
 
+function stopper(){
+	if(sessionStorage.getItem("stop")=="true"){
+		alert("wrong credentials; Correct your details in the extension and open student center again in new tab/window");
+
+		throw Error("wrong credentials");
+	}
+}
