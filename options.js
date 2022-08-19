@@ -8,8 +8,10 @@ $("#roll").blur(function(){
 });
 function recovery_previous_memory() {
 	chrome.storage.local.get(function(results) {
+		if (results.username != null && results.password != null) {
 		document.getElementById("roll").value = results.username;
 		document.getElementById("pwd").value = results.password;
+		}
 	});
   }
   
@@ -27,5 +29,5 @@ function save_options(){
 				}, 2000);
 			});
 		}
-		document.getElementById("save").addEventListener('click', save_options);
-		recovery_previous_memory();
+document.getElementById("save").addEventListener('click', save_options);
+recovery_previous_memory();
