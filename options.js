@@ -6,7 +6,13 @@ $("#roll").blur(function(){
 		return;
 	}
 });
-
+function recovery_previous_memory() {
+	chrome.storage.local.get(function(results) {
+		document.getElementById("roll").value = results.username;
+		document.getElementById("pwd").value = results.password;
+	});
+  }
+  
 function save_options(){
 			var roll = document.getElementById("roll").value;
 			var pwd  = document.getElementById("pwd").value;
@@ -22,3 +28,4 @@ function save_options(){
 			});
 		}
 		document.getElementById("save").addEventListener('click', save_options);
+		recovery_previous_memory();
